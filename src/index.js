@@ -28,14 +28,14 @@ app.post('/add', (req, res) => {
     }
     num1 = parseFloat(num1);
     num2 = parseFloat(num2);
-    let sum = num1 + num2;
-    if(((num1) > 100000 || (num2) > 100000) || sum > 100000){
+    let sum1 = num1 + num2;
+    if(((num1) > 100000 || (num2) > 100000) || sum1 > 100000){
         res.send({
             status: "error",
             message: "Overflow"
         });
         return;
-    }else if(num1 < -100000 || num2 < -100000 || sum < -100000){
+    }else if(num1 < -100000 || num2 < -100000 || sum1 < -100000){
         res.send({
             status: "error",
             message: "Underflow"
@@ -45,7 +45,7 @@ app.post('/add', (req, res) => {
     res.send({
         status: "success",
         message: "the sum of two given numbers",
-        sum: sum
+        sum: sum1
     });
 })
 
@@ -62,14 +62,14 @@ app.post('/sub', (req, res) => {
     }
     num1 = parseFloat(num1);
     num2 = parseFloat(num2);
-    let diff = req.body.num1 - req.body.num2;
-    if(((num1) > 100000 || (num2) > 100000) || diff > 100000){
+    let diff1 = num1 - num2;
+    if(((num1) > 100000 || (num2) > 100000) || diff1 > 100000){
         res.send({
             status: "error",
             message: "Overflow"
         });
         return;
-    }else if(num1 < -100000 || num2 < -100000 || diff < -100000){
+    }else if(num1 < -100000 || num2 < -100000 || diff1 < -100000){
         res.send({
             status: "error",
             message: "Underflow"
@@ -80,7 +80,7 @@ app.post('/sub', (req, res) => {
     res.send({
         status: "success",
         message: "the difference of two given numbers",
-        difference: diff
+        difference: diff1
     });
 })
 
