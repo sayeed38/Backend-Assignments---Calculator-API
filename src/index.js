@@ -89,7 +89,7 @@ app.post('/multiply', (req, res) => {
     });
 })
 
-app.post('/division', (req, res) => {
+app.post('/divide', (req, res) => {
     //console.log(req.body.num2);
     if(isNaN(+req.body.num1) || isNaN(+req.body.num2)){
         res.send({
