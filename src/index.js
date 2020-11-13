@@ -29,13 +29,13 @@ app.post('/add', (req, res) => {
     num1 = parseFloat(num1);
     num2 = parseFloat(num2);
     let sum1 = num1 + num2;
-    if(((num1) > 100000 || (num2) > 100000) || sum1 > 100000){
+    if(((num1) > 1000000 || (num2) > 1000000) || sum1 > 1000000){
         res.send({
             status: "error",
             message: "Overflow"
         });
         return;
-    }else if(num1 < -100000 || num2 < -100000 || sum1 < -100000){
+    }else if(num1 < -1000000 || num2 < -1000000 || sum1 < -1000000){
         res.send({
             status: "error",
             message: "Underflow"
@@ -63,13 +63,13 @@ app.post('/sub', (req, res) => {
     num1 = parseFloat(num1);
     num2 = parseFloat(num2);
     let diff1 = num1 - num2;
-    if(((num1) > 100000 || (num2) > 100000) || diff1 > 100000){
+    if(((num1) > 1000000 || (num2) > 1000000) || diff1 > 1000000){
         res.send({
             status: "error",
             message: "Overflow"
         });
         return;
-    }else if(num1 < -100000 || num2 < -100000 || diff1 < -100000){
+    }else if(num1 < -1000000 || num2 < -1000000 || diff1 < -1000000){
         res.send({
             status: "error",
             message: "Underflow"
@@ -97,13 +97,13 @@ app.post('/multiply', (req, res) => {
     num1 = parseFloat(num1);
     num2 = parseFloat(num2);
     let mul = req.body.num1 * req.body.num2;
-    if(((num1) > 100000 || (num2) > 100000) || mul > 100000){
+    if(((num1) > 1000000 || (num2) > 1000000) || mul > 1000000){
         res.send({
             status: "error",
             message: "Overflow"
         });
         return;
-    }else if(num1 < -100000 || num2 < -100000 || mul < -100000){
+    }else if(num1 < -1000000 || num2 < -1000000 || mul < -1000000){
         res.send({
             status: "error",
             message: "Underflow"
