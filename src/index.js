@@ -25,7 +25,7 @@ app.post('/add', (req, res) => {
         });
         return;
     }
-    let sum = +req.body.num1 + +req.body.num2;
+    let sum = req.body.num1 + req.body.num2;
     if((parseInt(req.body.num1) > 100000 || parseInt(req.body.num2) > 100000) || sum > 100000){
         res.send({
             status: "error",
@@ -49,7 +49,7 @@ app.post('/sub', (req, res) => {
         });
         return;
     }
-    let diff = +req.body.num1 - +req.body.num2;
+    let diff = req.body.num1 - req.body.num2;
     if((parseInt(req.body.num1) < 100000 || parseInt(req.body.num2) < 100000) || diff < 100000){
         res.send({
             status: "error",
@@ -81,7 +81,7 @@ app.post('/multiply', (req, res) => {
         });
         return;
     }
-    let mul = +req.body.num1 * +req.body.num2;
+    let mul = req.body.num1 * req.body.num2;
     res.send({
         status: "success",
         message: "The product of given numbers",
@@ -105,7 +105,7 @@ app.post('/division', (req, res) => {
         });
         return;
     }
-    let div = +req.body.num1 / +req.body.num2;
+    let div = req.body.num1 / req.body.num2;
     res.send({
         status: "success",
         message: "The division of given numbers",
